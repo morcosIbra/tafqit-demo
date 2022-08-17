@@ -1,24 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Tafqit from '@morcos/tafqit-numbers';
 
 function App() {
+  const [inputNumber, setInputNumber] = useState("");
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{"margin":"50px auto","width": "max-content"}}>
+      <label>Write a number:</label>
+      <input
+        type="number"
+        value={inputNumber}
+        onChange={(e) => setInputNumber(e.target.value)}
+      />
+
+      <Tafqit>{inputNumber}</Tafqit>
     </div>
   );
 }
